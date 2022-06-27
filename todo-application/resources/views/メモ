@@ -1,0 +1,24 @@
+ /*public function create(Request $request)
+    {
+        $param = new Application();
+        $param->content = $request->content;
+        /*$param->save();*/
+        /*return redirect('/');*/
+        /*return redirect('/todo/create');
+    }*/
+    /*
+    public function update(Request $request)
+    {
+        Application::find($request->content)->update();
+        return redirect('/');
+        /*return redirect('/todo/update');
+    }
+
+   public function remove(Request $request)
+    {
+        
+        $todo = Application::find($request->content);
+        $todo->delete();
+        return redirect('/');
+        /*return redirect('/todo/delete');
+    }*/
