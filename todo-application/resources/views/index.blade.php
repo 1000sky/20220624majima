@@ -17,7 +17,7 @@
         </ul>
     @endif
 
-    <form action="/" method="POST">
+    <form action="/todo/create" method="POST">
         <table>
          @csrf
          <tr>
@@ -47,8 +47,8 @@
                  <input type="text" name="content" size=20 value='{{$item->content}}'>
               </td>
               
-              <td>
-                    <form action='/' method="POST">
+              <td> 
+                    <form action='/todo/update' method="POST">
                         @csrf
                         
                         <button type="submit" name="content" value='{{$item->content}}'>更新</button>
@@ -56,9 +56,8 @@
               </td>
                 
                 <td>
-                    <form action='/' method="DELETE">
+                    <form action='/todo/delete' method="DELETE">
                         @csrf
-                    
                     <button type="submit" name="content" value='{{$item->content}}'>削除</button>
                     </form>
                 </td>

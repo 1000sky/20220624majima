@@ -30,16 +30,14 @@ class TodoController extends Controller
         Application::create([
             'content' => $request->content
         ]);
-        return redirect()->route('todo/create');
+        return redirect('/');
 
     }
-
-    
 
     public function update(Request $request)
     {
         Application::find($request->content)->update();
-        return redirect()->route('todo/update');
+        return redirect('/');
 
     }
 
@@ -48,7 +46,7 @@ class TodoController extends Controller
         
         $todo = Application::find($request->content);
         $todo->delete();
-        return redirect('/todo/delete');
+        return redirect('/');
     }
     
 

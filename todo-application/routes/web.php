@@ -22,11 +22,11 @@ use App\Http\Controllers\TestController;
 Route::get('/', [TodoController::class, 'index']);
 Route::post('/', [TodoController::class, 'post']);
 
-Route::post('/', [TodoController::class, 'add'])->name('todo/create');
+Route::post('/todo/create', [TodoController::class, 'add']);
 
-Route::post('/', [TodoController::class, 'update'])->name('todo/update');
+Route::post('/todo/update', [TodoController::class, 'update']);
 
-Route::post('/', [TodoController::class, 'remove'])->name('todo/delete'); 
+Route::post('/todo/delete', [TodoController::class, 'remove']);
 
 
 
