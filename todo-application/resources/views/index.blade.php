@@ -51,16 +51,16 @@
                     <form action='/todo/update' method="POST">
                         @csrf
                         
-                        <button type="submit" name="content" value='{{$item->content}}'>更新</button>
+                        <button type="submit" name="id" value='{{$item->id}}'>更新</button>
                     </form>   
               </td>
                 
-                <td>
+                {{-- <td> 
                     <form action='/todo/delete' method="DELETE">
                         @csrf
-                    <button type="submit" name="content" value='{{$item->content}}'>削除</button>
+                    <button type="submit" value='{{$item->id}}'>削除</button>
                     </form>
-                </td>
+                </td> --}}
                 
             </tr>
             @endforeach 

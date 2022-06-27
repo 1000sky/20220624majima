@@ -19,6 +19,7 @@ class TodoController extends Controller
     public function post(Request $request)
     {
         $validate_rule = [
+           
             'content' => 'required'
         ];
         $this->validate($request, $validate_rule);
@@ -36,18 +37,19 @@ class TodoController extends Controller
 
     public function update(Request $request)
     {
-        Application::find($request->content)->update();
-        return redirect('/');
+       
+        $param = Application::find($request->id);
+        return view('index', ['param' => $param]);
 
     }
 
-    public function remove(Request $request)
+    /*public function remove(Request $request)
     {
         
-        $todo = Application::find($request->content);
+        $todo = Application::find($request->id);
         $todo->delete();
         return redirect('/');
-    }
+    }*/
     
 
 }
