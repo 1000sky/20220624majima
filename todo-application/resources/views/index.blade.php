@@ -7,6 +7,7 @@
     <title>ToDo-Application</title>
     <link rel="stylesheet" href="../css/reset.css" />
 </head>
+
 <body>
     <h1>Todo List</h1>
     @if (count($errors) > 0)
@@ -25,7 +26,7 @@
             <td></td>
             <td></td>
             <td></td>
-            <td><input type="submit" value="追加"></td>
+            <td><input type="submit" value="追加" ></td>
          </tr>
         </table>
     </form>
@@ -47,25 +48,25 @@
                  <input type="text" name="content" size=20 value='{{$item->content}}'>
               </td>
               
-              <td> 
-                    <form action='/todo/update' method="POST">
-                        @csrf
-                        
-                        <button type="submit" name="id" value='{{$item->id}}'>更新</button>
-                    </form>   
-              </td>
+              {{--  <td> 
+                    
+                 <button type="botton" name="id" value='{{$item->id}}' formaction="/todo/update">更新</button>
+                     
+              </td> --}}
                 
-                {{-- <td> 
-                    <form action='/todo/delete' method="DELETE">
-                        @csrf
-                    <button type="submit" value='{{$item->id}}'>削除</button>
+                 <td> 
+                    <form action='/todo/delete' method="POST">
+                        @csrf    
+                        <input type="submit" value='削除'>
                     </form>
-                </td> --}}
-                
+                 </td>
+                <td> 
+                <button type="botton" formaction="/todo/delete" onclick="deletetTodo({{$item->id}})">削除</button>
+                </td> 
             </tr>
             @endforeach 
         </table> 
-         
+        
 
 </body>
 </html>
