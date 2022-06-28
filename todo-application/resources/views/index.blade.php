@@ -47,24 +47,23 @@
               <td>
                  <input type="text" name="content" size=20 value='{{$item->content}}'>
               </td>
-              
-              {{--  <td> 
-                    
-                 <button type="botton" name="id" value='{{$item->id}}' formaction="/todo/update">更新</button>
-                     
-              </td> --}}
+                 
+              <td> 
+                <form action="/todo/update" method="POST">   
+                    @csrf 
+                  <button type="submit" name="id" onClick="window.location.reload();" value='{{$item->id}}'>更新</button>
+                </form>  
+              </td> 
                 
-                 <td> 
-                    <form action='/todo/delete' method="POST">
-                        @csrf    
-                        <input type="submit" value='削除'>
-                    </form>
-                 </td>
-                <td> 
-                <button type="botton" formaction="/todo/delete" onclick="deletetTodo({{$item->id}})">削除</button>
-                </td> 
+              <td> 
+                <form action="/todo/delete" method="POST">
+                    @csrf        
+                    <button type="submit" name="id" onClick="resetForm()" value='{{$item->id}}'>削除</button>
+                </form>
+              </td>
+                
             </tr>
-            @endforeach 
+            @endforeach
         </table> 
         
 

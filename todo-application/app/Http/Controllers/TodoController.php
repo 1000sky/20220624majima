@@ -35,26 +35,28 @@ class TodoController extends Controller
 
     }
 
-    /*public function update(Request $request)
+    public function update(Request $request)
     {
        
+        $this->validate($request, [
+            'content' => 'request'
+        ]);
         $param = Application::find($request->id);
+        
         $param->save();
         return redirect('/');
 
-    }*/
-
-    public function delete(Request $request)
-    {
-        Application::find($request->id);
 
     }
+
+   
     public function remove(Request $request)
     {
         
         $todo = Application::find($request->id);
         $todo->delete();
         return redirect('/');
+
         
     }
     
