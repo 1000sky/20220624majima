@@ -24,7 +24,7 @@ Route::post('/', [TodoController::class, 'post']);
 
 Route::post('/todo/create', [TodoController::class, 'add']);
 
-Route::post('/todo/update', [TodoController::class, 'update'])->name('todo.update');
+Route::post('/todo/update', [TodoController::class, 'update']);
 
 
 Route::post('/todo/delete', [TodoController::class, 'remove']);

@@ -47,16 +47,16 @@ class TodoController extends Controller
     public function update(Request $request)
     {
 
-        $param = Application::find($request->id);   
+        /*$param = Application::find($request->id);  */ 
         
-        /*$param->save();*/
+        /*$param->save();
         $param->update();
-        return redirect('/');
-        
-        /*$form = $request->all();
-        unset($form['_token']);
-        Application::where('id', $request->id)->update($form);
         return redirect('/');*/
+        
+        $param = $request->all();
+        unset($param['_token']);
+        Application::where('id', $request->id)->update($param);
+        return redirect('/');
 
 
 
