@@ -1,0 +1,108 @@
+body {
+    background-color: rgb(32, 32, 157);
+}
+
+.card {
+    position: relative;
+    top: 250px;
+    left: 300px;
+
+    background-color: white;
+    width: 800px;
+    
+    padding: 20px 12px 10px;
+    border: 1px solid  white;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 30px;
+}
+
+.error {
+    margin-left: 10px;
+}
+
+.create_text {
+    margin: 10px 10px 20px 10px;
+    padding: 10px;
+    border: 1px solid  rgb(176, 173, 173);
+    border-radius: 10px;
+
+}
+
+.create_button {
+    background-color: white;
+    margin: 10px 0 20px 0;
+    padding:  10px ; 
+    border: 2px solid  rgb(206, 72, 184);
+    border-radius: 10px;
+    color: rgb(206, 72, 184);;
+    font-size: 0.9rem;
+}
+
+.create_button:hover {
+    color: white;
+    background-color: rgb(206, 72, 184);
+}
+
+
+ table th:nth-child(2) {  
+    margin-right: 50px;
+}
+
+table th {
+    text-align: center;
+}
+
+.task_text{
+
+    padding: 10px 0;
+    border: 1px solid  rgb(176, 173, 173);
+    border-radius: 10px;
+
+}
+
+
+
+table td {
+    
+    padding: 10px 20px;
+
+}
+
+.update_button {
+    background-color: white;
+    margin-left:2rem; 
+    padding:  10px ; 
+    border: 2px solid  rgb(245, 138, 30);
+    border-radius: 10px;
+    color: rgb(245, 138, 30);
+    font-size: 0.9rem;
+}
+
+.remove_button{
+    background-color: white;
+    margin-left: 1rem;
+    padding:  10px ; 
+    border: 2px solid  rgb(139, 236, 120);
+    border-radius: 10px;
+    color: rgb(139, 236, 120);
+    font-size: 0.9rem;
+}
+
+.update_button:hover {
+    color: white;
+    background-color: rgb(245, 138, 30);
+}
+
+.remove_button:hover {
+    color: white;
+    background-color: rgb(139, 236, 120);
+}
+
+.table{
+    
+	display: flex;
+	justify-content: space-between;
+}

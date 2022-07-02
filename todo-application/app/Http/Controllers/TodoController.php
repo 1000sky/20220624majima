@@ -28,6 +28,12 @@ class TodoController extends Controller
 
     public function add(Request $request)
     {
+        $validate_rule = [
+           
+            'content' => 'required'
+        ];
+        $this->validate($request, $validate_rule);
+
         Application::create([
             'content' => $request->content
         ]);
@@ -52,6 +58,12 @@ class TodoController extends Controller
         /*$param->save();
         $param->update();
         return redirect('/');*/
+
+        $validate_rule = [
+           
+            'content' => 'required'
+        ];
+        $this->validate($request, $validate_rule);
         
         $param = $request->all();
         unset($param['_token']);
@@ -65,7 +77,12 @@ class TodoController extends Controller
    
     public function remove(Request $request)
     {
-        
+        /*$validate_rule = [
+           
+            'content' => 'required'
+        ];
+        $this->validate($request, $validate_rule);*/
+
         $todo = Application::find($request->id);
         $todo->delete();
         return redirect('/');
