@@ -35,16 +35,29 @@ class TodoController extends Controller
 
     }
 
+   /* public function edit(Request $request)
+    {
+        $todo = Application::find($request->id);
+        return redirect('/', ['form' => $todo]);
+    }
+*/
+
+
+
     public function update(Request $request)
     {
-       
-        $this->validate($request, [
-            'content' => 'request'
-        ]);
-        $param = Application::find($request->id);
+
+        $param = Application::find($request->id);   
         
-        $param->save();
+        /*$param->save();*/
+        $param->update();
         return redirect('/');
+        
+        /*$form = $request->all();
+        unset($form['_token']);
+        Application::where('id', $request->id)->update($form);
+        return redirect('/');*/
+
 
 
     }

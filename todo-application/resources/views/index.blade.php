@@ -47,14 +47,16 @@
               <td>
                  <input type="text" name="content" size=20 value='{{$item->content}}'>
               </td>
-                 
+              @endforeach   
               <td> 
-                <form action="/todo/update" method="POST">   
+                 <form action="/todo/update" method="POST">     
                     @csrf 
-                  <button type="submit" name="id" onClick="window.location.reload();" value='{{$item->id}}'>更新</button>
+                    {{-- <input type="text" name="content" size=20 value='{{$item->id , $item->content}}'> --}}
+                  {{-- <button type="submit" name="id" onClick="window.location.reload();" value="{{$item->id}}">更新</button> --}}
+                  <button type="submit" name="id" onClick="window.location.reload();" value='{{$item->id , $item->content}}'>更新</button> 
                 </form>  
               </td> 
-                
+              @foreach ($items as $item)   
               <td> 
                 <form action="/todo/delete" method="POST">
                     @csrf        
