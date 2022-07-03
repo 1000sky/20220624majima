@@ -30,44 +30,43 @@
         </table>
     </form>
            
-        <table>  
-            <tr>   
-                <th>作成日</th>
-                <th>タスク名</th>
-                <th>更新</th>
-                <th>削除</th>
-            </tr>            
-            <tr>
-             
-             @foreach ($items as $item)
+    <table>  
+         <tr>   
+            <th>作成日</th>
+            <th>タスク名</th>
+            <th>更新</th>
+            <th>削除</th>
+         </tr>            
+         <tr>
+            @foreach ($items as $item)
               <td>
                  {{$item->created_at}}
               </td>
                
-              <td> 
-                 <form action="/todo/update" method="POST" >     
-                    @csrf 
+            <form action="/todo/update" method="POST" >     
+              @csrf 
                     {{-- <input type="text" name="content" size=20 value='{{$item->id , $item->content}}'> --}}
                   {{-- <button type="submit" name="id" onClick="window.location.reload();" value="{{$item->id}}">更新</button> --}}
                   {{-- <button type="submit" name="id" onClick="window.location.reload();" value='{{$item->id , $item->content}}'>更新</button>  --}}
 
-                  
+              <td>
                   <input type="text" name="content" size=40 value='{{$item->content}}' class=task_text>
+              </td>
+              <td>
                   <button type="submit" name="id" onClick="window.location.reload();" value="{{$item->id}}" class=update_button>更新</button>
-
-                </form>  
-              </td> 
+              </td>
+            </form>  
               
               <td> 
-                <form action="/todo/delete" method="POST">
+                  <form action="/todo/delete" method="POST">
                     @csrf        
                     <button type="submit" name="id" onClick="resetForm()" value='{{$item->id}}' class="remove_button">削除</button>
-                </form>
+                  </form>
               </td>
              
-            </tr>
+         </tr>
             @endforeach
-        </table> 
+    </table> 
    </div>      
 
 </body>
