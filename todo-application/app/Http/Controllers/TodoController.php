@@ -20,7 +20,7 @@ class TodoController extends Controller
     {
         $validate_rule = [
            
-            'content' => 'required'
+            'content' => 'required|max:20'
         ];
         $this->validate($request, $validate_rule);
         return view('index');
@@ -30,7 +30,7 @@ class TodoController extends Controller
     {
         $validate_rule = [
            
-            'content' => 'required'
+            'content' => 'required|max:20'
         ];
         $this->validate($request, $validate_rule);
 
@@ -61,7 +61,7 @@ class TodoController extends Controller
 
         $validate_rule = [
            
-            'content' => 'required'
+            'content' => 'required|max:20'
         ];
         $this->validate($request, $validate_rule);
         

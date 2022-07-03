@@ -1,11 +1,13 @@
 body {
     background-color: rgb(32, 32, 157);
+    
 }
 
 .card {
-    position: relative;
-    top: 250px;
-    left: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 
     background-color: white;
     width: 800px;
