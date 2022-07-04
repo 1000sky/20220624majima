@@ -33,3 +33,11 @@ Route::post('/todo/update', [TodoController::class, 'update']);
 
 
 Route::post('/todo/delete', [TodoController::class, 'remove']);
+
+
+{{-- @if (Auth::check()) 
+      <a href ="/"></a>
+   @else
+      <a href="/login"></a> 
+       
+   @endif--}}

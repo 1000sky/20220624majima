@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Application;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller
 {
@@ -90,5 +90,10 @@ class TodoController extends Controller
         
     }
     
+    /*public function login()
+    {
+        $user = Auth::user();
+        return view('/', $user);
+    }*/
 
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ApplicationsTable extends Migration
+class CreateLoginsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class ApplicationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('applications', function(Blueprint $table) {
-            $table->id('id', 20)->nullable(false); 
-            $table->string('content', 191)->nullable(false);
-            $table->integer('login_id');/*追加*/
+        Schema::create('logins', function (Blueprint $table) {
+            $table->id();
             $table->timestamp('created_at')->useCurrent()->nullable();
-            $table->timestamp('updated_at')->useCurrent()->nullable();   
+            $table->timestamp('updated_at')->useCurrent()->nullable();
         });
     }
 
@@ -29,6 +27,6 @@ class ApplicationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('applications');
+        Schema::dropIfExists('logins');
     }
 }

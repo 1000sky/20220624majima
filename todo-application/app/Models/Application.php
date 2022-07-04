@@ -10,4 +10,10 @@ class Application extends Model
     use HasFactory;
 
     protected $fillable = ['content'];
+
+     
+    public function loginuser() {
+        return $this->belongTo('App\Models\Login');
+    }
+
 }
