@@ -41,4 +41,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /*↓ここから追加 */
+    use HasFactory;
+    
+
+    protected $guarded = array('id');
+    public static $rules = array(
+        'id' => 'required'
+
+    );
+
+    public function applications(){
+        return $this->hasMany('App\Models\Application');
+    }
 }

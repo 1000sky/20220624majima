@@ -13,7 +13,7 @@ class Application extends Model
 
      
     public function loginuser() {
-        return $this->belongTo('App\Models\Login');
+        return $this->belongTo('App\Models\User');
     }
 
 }

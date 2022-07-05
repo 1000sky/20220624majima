@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Login extends Model
 {
-    use HasFactory;
-    
+    /*use HasFactory;
+
 
     protected $guarded = array('id');
     public static $rules = array(
@@ -18,5 +18,5 @@ class Login extends Model
 
     public function applications(){
         return $this->hasMany('App\Models\Application');
-    }
+    }*/
 }
