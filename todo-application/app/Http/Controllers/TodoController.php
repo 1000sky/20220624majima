@@ -95,5 +95,19 @@ class TodoController extends Controller
         $user = Auth::user();
         return view('/', $user);
     }*/
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+
+    }
+
+     public function login()
+     {
+    
+       $user = Auth::id();
+       
+       return redirect('/login' , $user);
+     }
 
 }
