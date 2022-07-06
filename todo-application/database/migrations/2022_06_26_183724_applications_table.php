@@ -16,7 +16,7 @@ class ApplicationsTable extends Migration
         Schema::create('applications', function(Blueprint $table) {
             $table->id('id', 20)->nullable(false); 
             $table->string('content', 191)->nullable(false);
-            $table->integer('user_id');/*追加*/
+            $table->foreignId('user_id')->constrained('users');/*追加*/
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();   
         });
