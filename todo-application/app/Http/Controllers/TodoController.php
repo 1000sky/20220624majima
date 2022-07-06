@@ -96,18 +96,18 @@ class TodoController extends Controller
         return view('/', $user);
     }*/
     
-    public function __construct()
+   /* public function __construct()
     {
         $this->middleware('auth');
 
-    }
+    }*/
 
      public function login()
      {
     
        $user = Auth::id();
        
-       return redirect('/login' , $user);
+       return view('/login' ,['user' => $user]);
      }
 
 }

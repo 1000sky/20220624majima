@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\User;
 
 
-class LoginController extends Controller
+class UserController extends Controller
 {
-   /* public function __construct()
+    /* public function __construct()
     {
         $this->middleware('auth');
 
@@ -23,3 +23,5 @@ class LoginController extends Controller
        return redirect('/login' , $user);
      }*/
 }
+
+
