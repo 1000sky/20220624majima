@@ -115,7 +115,7 @@ class TodoController extends Controller
      }
     */
 
-     public function store(Request $request)
+    /* public function store(Request $request)
      {
          
          $task = new Application();
@@ -123,6 +123,6 @@ class TodoController extends Controller
          $task->save();
  
          return redirect('/');
-     }
+     }*/
 
 }

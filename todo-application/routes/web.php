@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TodoController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
 use App\Http\Middleware\LoginMiddleware;
 
 /*
@@ -42,5 +42,6 @@ Route::post('/todo/delete', [TodoController::class, 'remove']);
 
 /*Route::get('/login', [LoginController::class, 'index'])->middleware(LoginMiddleware::class);*/
 
-Route::get('/login', [TodoController::class, 'create']);
+Route::get('/', [UserController::class, 'create']);
+Route::get('/login', [UserController::class, 'login']);
 
