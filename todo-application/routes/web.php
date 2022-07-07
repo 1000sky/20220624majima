@@ -42,5 +42,5 @@ Route::post('/todo/delete', [TodoController::class, 'remove']);
 
 /*Route::get('/login', [LoginController::class, 'index'])->middleware(LoginMiddleware::class);*/
 
-Route::get('/login', [TodoController::class, 'login']);
+Route::get('/login', [TodoController::class, 'create']);
 
