@@ -31,16 +31,6 @@ class UserController extends Controller
         User::create($user);
         return redirect('/');
     }
-
-    public function login()
-     {
-        
-        User::create([
-          'user_id' => Auth::id()]);
-
-        return redirect('/');
-      
-     }
     
 
     /* public function create(Request $request)

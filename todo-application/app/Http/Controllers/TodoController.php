@@ -20,9 +20,21 @@ class TodoController extends Controller
     {
         $validate_rule = [
            
-            'content' => 'required|max:20'
+            'content' => 'required|max:20',
+            
         ];
         $this->validate($request, $validate_rule);
+
+        Application::create([
+            'user_id' => 'id',
+            'content' => $request->content]);
+
+        /*$task= new Application();
+        $task -> user_id = Auth::user();
+        $task -> save();*/
+
+        /*$post = Application::where('user_id', Auth::user()->id)->get();
+        return view('index', ['post' => $post]);*/
         return view('index');
     } 
 
