@@ -26,7 +26,7 @@ class TodoController extends Controller
         $this->validate($request, $validate_rule);
 
         Application::create([
-            'user_id' => 'id',
+            'user_id' => Auth::id(),
             'content' => $request->content]);
 
         /*$task= new Application();
