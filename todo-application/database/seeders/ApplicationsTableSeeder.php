@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
+
 class ApplicationsTableSeeder extends Seeder
 {
     /**
@@ -20,6 +21,7 @@ class ApplicationsTableSeeder extends Seeder
         foreach($contents as $content){
 
         DB::table('applications')->insert([
+            
             'content' => $content,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),

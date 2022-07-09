@@ -28,7 +28,7 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/', [TodoController::class, 'index']);
-Route::post('/', [TodoController::class, 'post']);
+/*Route::post('/', [TodoController::class, 'post']);*/
 
 Route::post('/todo/create', [TodoController::class, 'add']);
 
@@ -42,6 +42,6 @@ Route::post('/todo/delete', [TodoController::class, 'remove']);
 
 /*Route::get('/login', [LoginController::class, 'index'])->middleware(LoginMiddleware::class);*/
 
-Route::get('/', [UserController::class, 'create']);
+/*Route::get('/', [UserController::class, 'create']);*/
 /*Route::get('/login', [UserController::class, 'login']);*/
 

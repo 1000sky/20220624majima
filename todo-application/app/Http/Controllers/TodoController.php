@@ -11,12 +11,13 @@ class TodoController extends Controller
 {
     public function index()
     {
-        $items = Application::all();
+        $items = Application::where('user_id', Auth::user()->id)->get();
+        
         return view ('index', ['items' => $items]);
 
     }
 
-    public function post(Request $request)
+   /* public function post(Request $request)
     {
         $validate_rule = [
            
@@ -25,9 +26,7 @@ class TodoController extends Controller
         ];
         $this->validate($request, $validate_rule);
 
-        Application::create([
-            'user_id' => Auth::id(),
-            'content' => $request->content]);
+        
 
         /*$task= new Application();
         $task -> user_id = Auth::user();
@@ -35,8 +34,8 @@ class TodoController extends Controller
 
         /*$post = Application::where('user_id', Auth::user()->id)->get();
         return view('index', ['post' => $post]);*/
-        return view('index');
-    } 
+        /*return view('index'); 
+    } */
 
     public function add(Request $request)
     {
@@ -47,6 +46,7 @@ class TodoController extends Controller
         $this->validate($request, $validate_rule);
 
         Application::create([
+            'user_id' => Auth::id(),
             'content' => $request->content
         ]);
         
