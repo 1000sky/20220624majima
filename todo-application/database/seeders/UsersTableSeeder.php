@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 
 class UsersTableSeeder extends Seeder
@@ -19,7 +21,9 @@ class UsersTableSeeder extends Seeder
             'id' => '1',
             'name' => 'A',
             'email' => 'A@gmail.com',
-            'password' => 'Aaaaaaaa'
+            'password' => Hash::make('Aaaaaaaa'),
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
 
@@ -27,7 +31,9 @@ class UsersTableSeeder extends Seeder
             'id' => '2',
             'name' => 'B',
             'email' => 'B@gmail.com',
-            'password' => 'Bbbbbbbb'
+            'password' => 'Bbbbbbbb',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
 
@@ -36,7 +42,9 @@ class UsersTableSeeder extends Seeder
             'id' => '3',
             'name' => 'C',
             'email' => 'C@gmail.com',
-            'password' => 'Cccccccc'
+            'password' => 'Cccccccc',
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
         ];
         DB::table('users')->insert($param);
 
